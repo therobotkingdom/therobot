@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Letbone | Learn. Grow. Achieve.</title>
+  <meta name="description" content="Letbone is a family‑friendly platform offering academic resources, life coaching, motivational content, and entrepreneurial tools." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://letbone.com/" />
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Letbone | Learn. Grow. Achieve." />
+  <meta property="og:description" content="Academic resources, life coaching, motivational content, and entrepreneurial tools—under one roof." />
+  <meta property="og:url" content="https://letbone.com/" />
+  <meta property="og:image" content="https://letbone.com/assets/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Letbone | Learn. Grow. Achieve." />
+  <meta name="twitter:description" content="Academic resources, life coaching, motivational content, and entrepreneurial tools—under one roof." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Letbone",
+    "url":"https://letbone.com",
+    "logo":"https://letbone.com/assets/logo.png",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Kimberley",
+      "addressRegion":"Northern Cape",
+      "addressCountry":"ZA"
+    },
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"hello@letbone.com",
+      "telephone":"+27 123 456 789"
+    }]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#ffffff;          /* Base */
+      --ink:#0f172a;         /* Slate-900 */
+      --muted:#64748b;       /* Slate-500 */
+      --brand:#2563eb;       /* Motivational Blue */
+      --accent:#f59e0b;      /* Energetic Amber */
+      --card:#f8fafc;        /* Soft panel */
+      --ring:rgba(37,99,235,.35); /* focus ring */
+      --success:#16a34a;     
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid var(--ring);outline-offset:2px}
+
+    /* Layout */
+    .container{max-width:1200px;margin-inline:auto;padding:clamp(16px,2vw,24px)}
+    header.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--brand),var(--accent));color:#fff}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-weight:700;font-size:1.25rem;letter-spacing:.4px}
+    .nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    .nav a{color:#fff;font-weight:600}
+    .menu-toggle{display:none;background:#fff;color:var(--brand);border:0;border-radius:999px;padding:.55rem .8rem;font-weight:700}
+
+    .hero{background:linear-gradient(180deg,rgba(37,99,235,.08),transparent);padding:64px 0 48px}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .hero h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:.2rem 0 .6rem}
+    .hero p{color:#1e293b;margin:0 0 1.2rem}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:999px;padding:.8rem 1.1rem;font-weight:700;border:2px solid transparent}
+    .btn.primary{background:#fff;color:var(--brand)}
+    .btn.secondary{background:transparent;color:#fff;border-color:#fff}
+
+    section{padding:56px 0}
+    .section-title{font-size:clamp(1.6rem,3.2vw,2.2rem);margin:0 0 .4rem}
+    .section-lead{color:var(--muted);max-width:70ch;margin:0 0 1.4rem}
+
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:18px}
+    .card h3{margin:.2rem 0 .4rem;font-size:1.1rem}
+    .meta{color:var(--muted);font-size:.9rem}
+
+    /* Resources list */
+    .resource{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+    .pill{display:inline-block;background:rgba(37,99,235,.1);color:var(--brand);padding:.1rem .5rem;border-radius:999px;font-size:.8rem;font-weight:700}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,select{width:100%;padding:.9rem;border:1px solid #cbd5e1;border-radius:12px;font:inherit}
+    button[type=submit]{background:var(--brand);color:#fff;border:0;border-radius:12px;padding:.9rem 1rem;font-weight:700}
+    .note{font-size:.9rem;color:var(--muted)}
+
+    footer{background:#0b1220;color:#cbd5e1;padding:32px 0}
+    footer a{color:#e2e8f0}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+    }
+    @media (max-width: 800px){
+      .nav ul{display:none}
+      .menu-toggle{display:inline-flex}
+      .nav.open ul{display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);position:absolute;left:16px;right:16px;top:64px;padding:12px 16px;border-radius:16px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container nav" id="siteNav">
+      <a class="logo" href="#home" aria-label="Letbone Home">Letbone</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" onclick="toggleNav()">Menu</button>
+      <ul id="primary-nav" aria-label="Primary navigation">
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero" aria-labelledby="heroTitle">
+    <div class="container hero-inner">
+      <div>
+        <h1 id="heroTitle">Unlock Your Potential</h1>
+        <p class="section-lead" style="color:#0b1220">Academic resources, life coaching, motivational content, and entrepreneurial tools—designed for families, learners, and leaders.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#courses">Browse Courses</a>
+          <a class="btn secondary" href="#coaching">Book Coaching</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Students and professionals collaborating with laptops and notebooks" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" aria-labelledby="aboutTitle">
+    <div class="container">
+      <h2 class="section-title" id="aboutTitle">About Letbone</h2>
+      <p class="section-lead">We help students, parents, and professionals thrive with practical study guides, career‑ready skills, compassionate life coaching, and step‑by‑step entrepreneurship tools.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Academic Support</h3>
+          <p>Study strategies, CAPS‑aligned resources, and productivity systems to boost results.</p>
+        </div>
+        <div class="card">
+          <h3>Life Coaching</h3>
+          <p>Confidential 1:1 or group sessions focused on mindset, clarity, and confidence.</p>
+        </div>
+        <div class="card">
+          <h3>Entrepreneurship</h3>
+          <p>Business planning templates, workshops, and community for new founders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" aria-labelledby="blogTitle">
+    <div class="container">
+      <h2 class="section-title" id="blogTitle">Blog</h2>
+      <p class="section-lead">Fresh reads on productivity, motivation, and entrepreneurship.</p>
+      <div class="grid cols-3">
+        <article class="card" aria-labelledby="a1">
+          <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop" alt="Planner, coffee, and laptop on a desk" />
+          <h3 id="a1">Time‑Blocking That Actually Sticks</h3>
+          <p class="meta">5 min read · Productivity</p>
+          <p>Learn the 3‑block system that keeps studies, work, and family life in balance.</p>
+          <a href="#" aria-label="Read Time‑Blocking That Actually Sticks">Read article →</a>
+        </article>
+        <article class="card" aria-labelledby="a2">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="People cheering and smiling in a group workshop" />
+          <h3 id="a2">Motivation on Tough Days</h3>
+          <p class="meta">4 min read · Motivation</p>
+          <p>Simple mental resets and family‑friendly habits to keep momentum going.</p>
+          <a href="#" aria-label="Read Motivation on Tough Days">Read article →</a>
+        </article>
+        <article class="card" aria-labelledby="a3">
+          <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1200&auto=format&fit=crop" alt="Sticky notes planning a startup idea" />
+          <h3 id="a3">From Idea to First Customer</h3>
+          <p class="meta">6 min read · Entrepreneurship</p>
+          <p>Turn a school or community problem into a lean, testable business in 10 steps.</p>
+          <a href="#" aria-label="Read From Idea to First Customer">Read article →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses / Workshops -->
+  <section id="courses" aria-labelledby="coursesTitle">
+    <div class="container">
+      <h2 class="section-title" id="coursesTitle">Online Courses & Workshops</h2>
+      <p class="section-lead">Self‑paced modules and live workshops on study skills, business basics, and content creation.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Study Skills Accelerator</h3>
+          <p>Note‑taking, memory techniques, and exam planning. Includes printable planners.</p>
+          <p class="meta">Beginner · 4 weeks</p>
+          <a class="btn" href="#" aria-label="View Study Skills Accelerator">View details</a>
+        </div>
+        <div class="card">
+          <h3>Start Smart: Business Basics</h3>
+          <p>Idea validation, business plans, and simple marketing that works on a budget.</p>
+          <p class="meta">Beginner · 6 weeks</p>
+          <a class="btn" href="#" aria-label="View Start Smart: Business Basics">View details</a>
+        </div>
+        <div class="card">
+          <h3>Creator Workshop</h3>
+          <p>Build confidence on camera, outline lessons, and launch your first course.</p>
+          <p class="meta">All levels · Weekend bootcamp</p>
+          <a class="btn" href="#" aria-label="View Creator Workshop">View details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Life Coaching -->
+  <section id="coaching" aria-labelledby="coachTitle">
+    <div class="container">
+      <h2 class="section-title" id="coachTitle">Life Coaching Services</h2>
+      <p class="section-lead">Personal, family‑friendly coaching focused on mindset, goals, and accountability.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>1:1 Coaching</h3>
+          <p>60‑minute sessions to get clarity, set priorities, and build momentum.</p>
+          <ul>
+            <li>Goal mapping & action plans</li>
+            <li>Study & career guidance</li>
+            <li>Entrepreneurial planning</li>
+          </ul>
+          <a class="btn" href="mailto:coach@letbone.com?subject=Coaching%20Session%20Request" aria-label="Email to schedule a coaching session">Request a Session</a>
+        </div>
+        <div class="card">
+          <h3>Schedule Online</h3>
+          <p>Prefer instant booking? Use our online scheduler.</p>
+          <div class="resource">
+            <span>Open the booking calendar</span>
+            <a class="btn" href="#" aria-label="Open booking calendar">Book now</a>
+          </div>
+          <p class="note">Tip: replace the "Book now" link with your Calendly/TidyCal URL when ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Library -->
+  <section id="resources" aria-labelledby="resTitle">
+    <div class="container">
+      <h2 class="section-title" id="resTitle">Resource Library</h2>
+      <p class="section-lead">Downloadable templates and checklists for school, work, and small business.</p>
+      <div class="grid">
+        <div class="resource">
+          <div>
+            <strong>Weekly Study Planner (PDF)</strong>
+            <div class="meta">Academic · A4 printable</div>
+          </div>
+          <a class="btn" href="assets/resources/weekly-study-planner.pdf" download>Download</a>
+        </div>
+        <div class="resource">
+          <div>
+            <strong>Business Plan Template (DOCX)</strong>
+            <div class="meta">Entrepreneurship · Editable</div>
+          </div>
+          <a class="btn" href="assets/resources/business-plan-template.docx" download>Download</a>
+        </div>
+        <div class="resource">
+          <div>
+            <strong>Goal‑Setting Worksheet (PDF)</strong>
+            <div class="meta">Coaching · SMART goals</div>
+          </div>
+          <a class="btn" href="assets/resources/goal-setting-worksheet.pdf" download>Download</a>
+        </div>
+      </div>
+      <p class="note">Place your files inside <code>/assets/resources/</code> and update the links above.</p>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" aria-labelledby="communityTitle">
+    <div class="container">
+      <h2 class="section-title" id="communityTitle">Community Forum</h2>
+      <p class="section-lead">Connect, ask questions, and share wins with supportive peers and mentors.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Join the Forum</h3>
+          <p>Start discussions on productivity, study tips, entrepreneurship, and more.</p>
+          <a class="btn" href="#" aria-label="Join the community forum">Join the conversation</a>
+        </div>
+        <div class="card">
+          <h3>House Rules</h3>
+          <p>Family‑friendly, inclusive, and kind. No spam, bullying, or explicit content.</p>
+          <span class="pill" aria-label="Family friendly policy">Family friendly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contactTitle">
+    <div class="container">
+      <h2 class="section-title" id="contactTitle">Contact Us</h2>
+      <p class="section-lead">Questions about courses, coaching, or partnerships? Send a message.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <form name="contact" method="post" data-enhanced="true" onsubmit="return submitContact(event)">
+            <label>
+              <span>Name</span>
+              <input name="name" required autocomplete="name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>
+              <span>Topic</span>
+              <select name="topic" aria-label="Select a topic">
+                <option>General</option>
+                <option>Coaching</option>
+                <option>Courses</option>
+                <option>Resources</option>
+              </select>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit">Send Message</button>
+            <div id="formStatus" role="status" class="note" aria-live="polite"></div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Reach Us</h3>
+          <p><strong>Email:</strong> <a href="mailto:hello@letbone.com">hello@letbone.com</a></p>
+          <p><strong>Phone:</strong> +27 123 456 789</p>
+          <p><strong>Location:</strong> Kimberley, Northern Cape, South Africa</p>
+          <p class="note">Prefer WhatsApp or a call? Mention it in your message and we’ll arrange a suitable time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:grid;gap:16px">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+        <div class="logo" aria-label="Letbone">Letbone</div>
+        <nav aria-label="Footer">
+          <a href="#about">About</a> · <a href="#blog">Blog</a> · <a href="#courses">Courses</a> · <a href="#coaching">Coaching</a> · <a href="#resources">Resources</a> · <a href="#community">Community</a> · <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <small>© <span id="year"></span> Letbone. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav(){
+      const nav = document.getElementById('siteNav');
+      const btn = document.querySelector('.menu-toggle');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', (!expanded).toString());
+      nav.classList.toggle('open');
+    }
+    // Contact form (static demo): opens mailto as fallback
+    function submitContact(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form));
+      const subject = encodeURIComponent('Website contact: ' + (data.topic||'General'));
+      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nTopic: ${data.topic}\n\n${data.message}`);
+      const mailto = `mailto:hello@letbone.com?subject=${subject}&body=${body}`;
+      document.getElementById('formStatus').textContent = 'Opening your email app…';
+      window.location.href = mailto;
+      return false;
+    }
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
