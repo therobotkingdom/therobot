@@ -3,143 +3,151 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#b9452f">
-  <meta name="description" content="You are warmly invited to Wandisile Mokako's iQude celebration on 19 December 2026 at kwaMashiyane.">
-  <meta property="og:title" content="iQude — Wandisile Mokako">
-  <meta property="og:description" content="Saturday, 19 December 2026 • 10:00 • kwaMashiyane">
+  <meta name="theme-color" content="#14110f">
+  <meta name="description" content="You are warmly invited to Wandisile Mokako's iQude ceremony on 19 December 2026 in Bundu Village, kwaMashiyane.">
+  <meta property="og:title" content="Wandisile's iQude Invitation">
+  <meta property="og:description" content="Saturday, 19 December 2026 at 10:00 • Bundu Village, kwaMashiyane">
   <meta property="og:type" content="website">
-  <title>iQude | Wandisile Mokako</title>
+  <meta property="og:image" content="assets/iqude-hero.png">
+  <title>Kuhlatjiwe Ngakwethu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <a class="skip-link" href="#details">Skip to event details</a>
 
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="iQude invitation home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>W · M</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#details">Details</a>
-      <a href="#venue">Venue</a>
-      <a class="nav-rsvp" href="#rsvp">RSVP</a>
+  <header class="hero" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Wandisile iQude home">
+        <span class="brand-mark" aria-hidden="true">iQude</span>
+        <span>19 · 12 · 26</span>
+      </a>
+      <div class="nav-links">
+        <a href="#details">Details</a>
+        <a href="#venue">Venue</a>
+        <a class="nav-rsvp" href="https://wa.me/27762305956?text=Sawubona%2C%20I%20would%20like%20to%20RSVP%20for%20Wandisile%20Mokako%27s%20iQude%20ceremony%20on%2019%20December%202026." target="_blank" rel="noopener">RSVP</a>
+      </div>
     </nav>
+
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-content shell">
+      <p class="eyebrow">Kuhlatjiwe Ngakwethu</p>
+      <h1><span>Kuhlatjiwe</span> Ngakwethu!!!</h1>
+      <p class="ceremony">kwaMashiyane</p>
+      <p class="intro">Lotjhani, siyanimema bonyana nizokugidinga nathi umnyanya weQude, kwaMashiyane</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://wa.me/27762305956?text=Sawubona%2C%20I%20would%20like%20to%20RSVP%20for%20Wandisile%20Mokako%27s%20iQude%20ceremony%20on%2019%20December%202026." target="_blank" rel="noopener">
+          <span>RSVP on WhatsApp</span><span aria-hidden="true">↗</span>
+        </a>
+        <button class="button button-ghost" id="calendarButton" type="button">
+          <span>Add to calendar</span><span aria-hidden="true">＋</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pattern-band" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="invitation-title">
-      <div class="hero-pattern pattern-left" aria-hidden="true"></div>
-      <div class="hero-pattern pattern-right" aria-hidden="true"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow"><span></span> A traditional celebration <span></span></p>
-        <p class="invitation-line">You are warmly invited to celebrate</p>
-        <h1 id="invitation-title"><em>i</em>Qude</h1>
-        <div class="celebrant">
-          <span>in honour of</span>
-          <h2>Wandisile Mokako</h2>
+    <section class="details section shell" id="details">
+      <div class="section-heading reveal">
+        <p class="kicker">Nini?</p>
+        <h2>Ilanga linye elihle.<br>Umhlangano munye oligugu.</h2>
+      </div>
+
+      <div class="detail-grid">
+        <article class="detail-card reveal">
+          <span class="card-number">01</span>
+          <p class="card-label">Date</p>
+          <h3>NgoMgqibelo(Saturday)</h3>
+          <p>19-20 December 2026</p>
+        </article>
+       <!--  <article class="detail-card reveal">
+          <span class="card-number">02</span>
+          <p class="card-label">Time</p>
+          <h3>10:00</h3>
+          <p>Please arrive a little early</p>
+        </article> -->
+        <!-- <article class="detail-card accent-card reveal">
+          <span class="card-number">03</span>
+          <p class="card-label">Celebrant</p>
+          <h3>Wandisile</h3>
+          <p>Mokako</p>
+        </article> -->
+      </div>
+    </section>
+
+    <section class="countdown-wrap" aria-labelledby="countdownTitle">
+      <div class="countdown shell reveal">
+        <div>
+          <p class="kicker light">Bekube kulapho sigidinga khona.</p>
+          <h2 id="countdownTitle">Ilanga liyasondela.</h2>
         </div>
-        <div class="hero-date" aria-label="Saturday 19 December 2026 at 10 o'clock">
-          <span>Saturday</span>
-          <strong>19 · 12 · 26</strong>
-          <span>10:00</span>
+        <div class="timer" aria-live="polite">
+          <div><strong id="days">--</strong><span>Days</span></div>
+          <div><strong id="hours">--</strong><span>Hours</span></div>
+          <div><strong id="minutes">--</strong><span>Minutes</span></div>
+          <div><strong id="seconds">--</strong><span>Seconds</span></div>
         </div>
-        <a class="scroll-cue" href="#details" aria-label="View invitation details">
-          <span>Discover the day</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </div>
+    </section>
+
+    <section class="venue section shell" id="venue">
+      <div class="venue-copy reveal">
+        <p class="kicker">Lapho ungasifumana khona</p>
+        <h2>Hlangana nathi<br>kwaMashiyane.</h2>
+        <div class="address">
+          <span class="pin" aria-hidden="true">⌖</span>
+          <div>
+            <p>1371 Bundu Village</p>
+            <p>kwaMashiyane</p>
+            <p class="muted">ekhabo Thembisile</p>
+          </div>
+        </div>
+        <a class="text-link" href="https://www.google.com/maps/dir/?api=1&destination=-25.30653419633695%2C29.06541508042702" target="_blank" rel="noopener">
+          Open directions in Google Maps <span aria-hidden="true">↗</span>
         </a>
       </div>
-    </section>
 
-    <section class="intro section-pad" id="details" aria-labelledby="gather-title">
-      <div class="section-number" aria-hidden="true">01</div>
-      <div class="intro-copy reveal">
-        <p class="kicker">The gathering</p>
-        <h2 id="gather-title">A day of family,<br><i>tradition & joy.</i></h2>
-        <p>Come share in a meaningful celebration as loved ones gather for Wandisile's iQude. Your presence will make this occasion all the more special.</p>
-      </div>
-      <div class="date-card reveal">
-        <div class="date-card-top">
-          <span>December</span>
-          <span>2026</span>
+      <div class="map-card reveal">
+        <div class="map-pattern" aria-hidden="true"></div>
+        <div class="map-marker" aria-hidden="true"><span></span></div>
+        <div class="map-meta">
+          <span>25°18'23.5"S</span>
+          <span>29°03'55.5"E</span>
         </div>
-        <div class="big-date">19</div>
-        <div class="date-card-bottom">
-          <span>Saturday</span>
-          <span>10:00</span>
-        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=-25.30653419633695%2C29.06541508042702" target="_blank" rel="noopener" aria-label="View venue on Google Maps"></a>
       </div>
     </section>
 
-    <section class="countdown-section" aria-label="Countdown to the celebration">
-      <div class="countdown-pattern" aria-hidden="true"></div>
-      <div class="countdown-inner reveal">
-        <p class="kicker light">Until we celebrate</p>
-        <div class="countdown" id="countdown" aria-live="polite">
-          <div><strong id="days">—</strong><span>Days</span></div>
-          <div><strong id="hours">—</strong><span>Hours</span></div>
-          <div><strong id="minutes">—</strong><span>Minutes</span></div>
-          <div><strong id="seconds">—</strong><span>Seconds</span></div>
+    <section class="rsvp" id="rsvp">
+      <div class="rsvp-panel shell reveal">
+        <p class="kicker light">Sazise ukuthi uzokuza</p>
+        <h2>Ukuphumelela kwenu<br>kuyoba ngelikhulu ithabo kithi.</h2>
+        <p>Thumela ipendulo yakho ku <strong>076 230 5956</strong>.</p>
+        <div class="rsvp-actions">
+          <a class="button button-light" href="https://wa.me/27762305956?text=Sawubona%2C%20I%20would%20like%20to%20RSVP%20for%20Wandisile%20Mokako%27s%20iQude%20ceremony%20on%2019%20December%202026." target="_blank" rel="noopener">Phendula nge-WhatsApp <span aria-hidden="true">↗</span></a>
+          <button class="share-button" id="shareButton" type="button">Yabelana ngesimemo</button>
         </div>
-      </div>
-    </section>
-
-    <section class="venue section-pad" id="venue" aria-labelledby="venue-title">
-      <div class="section-number" aria-hidden="true">02</div>
-      <div class="venue-card reveal">
-        <div class="venue-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M24 43s14-12.1 14-25A14 14 0 1 0 10 18c0 12.9 14 25 14 25Z"/><circle cx="24" cy="18" r="5"/></svg>
-        </div>
-        <p class="kicker">Where to find us</p>
-        <h2 id="venue-title">kwaMashiyane</h2>
-        <p class="address">1371 Bundu Village<br>ekhabo Thembisile</p>
-        <p class="coordinates">25°18'24.5&quot;S &nbsp; 29°03'55.5&quot;E</p>
-        <div class="button-row">
-          <a class="button button-primary" href="https://www.google.com/maps/dir/?api=1&destination=-25.306800%2C29.065410" target="_blank" rel="noopener">
-            <span>Get directions</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <button class="button button-secondary" id="calendarButton" type="button">
-            <span>Add to calendar</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v4M18 3v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="map-art reveal" aria-hidden="true">
-        <div class="map-line line-one"></div>
-        <div class="map-line line-two"></div>
-        <div class="map-pin"><span></span></div>
-        <span class="map-label">Bundu Village</span>
-        <span class="map-coord">−25.3068<br>29.0654</span>
-      </div>
-    </section>
-
-    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
-      <div class="rsvp-pattern pattern-left" aria-hidden="true"></div>
-      <div class="rsvp-pattern pattern-right" aria-hidden="true"></div>
-      <div class="rsvp-content reveal">
-        <p class="kicker light">Save your place</p>
-        <h2 id="rsvp-title">We would love<br>to celebrate <i>with you.</i></h2>
-        <p>Please let us know if you will be joining us. Tap below to send your response via WhatsApp.</p>
-        <a class="whatsapp-button" href="https://wa.me/27762305956?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20Wandisile%20Mokako%27s%20iQude%20on%2019%20December%202026.%20My%20name%20is%3A%20" target="_blank" rel="noopener">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.3 4.7A15.8 15.8 0 0 0 2.5 23.8L.3 31.7l8.1-2.1A15.7 15.7 0 0 0 16 31.5h.1A15.8 15.8 0 0 0 27.3 4.7Zm-11.2 24a13.1 13.1 0 0 1-6.7-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5A13.1 13.1 0 1 1 16.1 28.7Zm7.2-9.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.6-.2.3-.5.3-.9.1-2.3-1.1-3.8-2-5.3-4.6-.4-.7.4-.6 1.1-2.1.1-.3.1-.5 0-.8l-1.2-2.9c-.3-.7-.7-.6-1-.6h-.8c-.3 0-.8.1-1.2.6-.4.4-1.6 1.5-1.6 3.7s1.6 4.3 1.8 4.6c.2.3 3.2 4.9 7.7 6.8 2.9 1.2 4 1.3 5.4 1.1.9-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.5-.3-.9-.5Z"/></svg>
-          <span>RSVP on WhatsApp</span>
-        </a>
-        <a class="phone-link" href="tel:+27762305956">076 230 5956</a>
+        <p class="share-status" id="shareStatus" role="status"></p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-mark" aria-hidden="true"></div>
-    <p>iQude · Wandisile Mokako</p>
-    <p>19 December 2026 · kwaMashiyane</p>
-    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    <div class="footer-pattern" aria-hidden="true"></div>
+    <div class="shell footer-inner">
+      <p>Created by · Red Carpet Video & Photo Productions · 076 230 5956</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">Calendar event downloaded</div>
+  <noscript><p class="noscript">Please enable JavaScript to see the countdown and use the calendar button.</p></noscript>
+  <script src="script.js"></script>
 </body>
 </html>

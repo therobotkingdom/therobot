@@ -1,6 +1,6 @@
 const eventDate = new Date("2026-12-19T10:00:00+02:00");
 
-const countdownFields = {
+const timerFields = {
   days: document.querySelector("#days"),
   hours: document.querySelector("#hours"),
   minutes: document.querySelector("#minutes"),
@@ -9,60 +9,38 @@ const countdownFields = {
 
 function updateCountdown() {
   const distance = eventDate.getTime() - Date.now();
-  const countdown = document.querySelector("#countdown");
-
   if (distance <= 0) {
-    countdown.innerHTML = "<p class=\"celebration-message\">The celebration has arrived.</p>";
+    Object.values(timerFields).forEach((field) => { field.textContent = "00"; });
+    document.querySelector("#countdownTitle").textContent = "Today, we celebrate!";
     return;
   }
 
   const day = 1000 * 60 * 60 * 24;
   const hour = 1000 * 60 * 60;
   const minute = 1000 * 60;
-  countdownFields.days.textContent = Math.floor(distance / day);
-  countdownFields.hours.textContent = String(Math.floor((distance % day) / hour)).padStart(2, "0");
-  countdownFields.minutes.textContent = String(Math.floor((distance % hour) / minute)).padStart(2, "0");
-  countdownFields.seconds.textContent = String(Math.floor((distance % minute) / 1000)).padStart(2, "0");
+  timerFields.days.textContent = String(Math.floor(distance / day)).padStart(2, "0");
+  timerFields.hours.textContent = String(Math.floor((distance % day) / hour)).padStart(2, "0");
+  timerFields.minutes.textContent = String(Math.floor((distance % hour) / minute)).padStart(2, "0");
+  timerFields.seconds.textContent = String(Math.floor((distance % minute) / 1000)).padStart(2, "0");
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-function updateProgress() {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-  document.querySelector("#progressBar").style.width = `${progress}%`;
-}
-
-window.addEventListener("scroll", updateProgress, { passive: true });
-updateProgress();
-
 document.querySelector("#calendarButton").addEventListener("click", () => {
   const calendar = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//iQude Invitation//EN",
+    "PRODID:-//Wandisile iQude//Invitation//EN",
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
-    "UID:iqude-wandisile-20261219@invitation",
-    "DTSTAMP:20261102T080000Z",
-    "DTSTART:20261219T080000Z",
-    "DTEND:20261219T120000Z",
-    "SUMMARY:iQude — Wandisile Mokako",
-    "DESCRIPTION:You are warmly invited to celebrate Wandisile Mokako's iQude.",
+    "UID:wandisile-iqude-20261219@invitation",
+    "DTSTAMP:20261110T120000Z",
+    "DTSTART;TZID=Africa/Johannesburg:20261219T100000",
+    "SUMMARY:Wandisile Mokako's iQude Ceremony",
     "LOCATION:1371 Bundu Village\\, kwaMashiyane (ekhabo Thembisile)",
-    "GEO:-25.306800;29.065410",
+    "DESCRIPTION:You are warmly invited to Wandisile Mokako's iQude ceremony.",
+    "GEO:-25.306534;29.065415",
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
@@ -71,13 +49,40 @@ document.querySelector("#calendarButton").addEventListener("click", () => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "wandisile-mokako-iQude.ics";
-  document.body.appendChild(link);
+  link.download = "wandisile-iqude-19-december-2026.ics";
   link.click();
-  link.remove();
   URL.revokeObjectURL(url);
-
-  const toast = document.querySelector("#toast");
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 2600);
 });
+
+const shareButton = document.querySelector("#shareButton");
+const shareStatus = document.querySelector("#shareStatus");
+shareButton.addEventListener("click", async () => {
+  const shareData = {
+    title: "Wandisile's iQude Invitation",
+    text: "Join us for Wandisile Mokako's iQude ceremony on Saturday, 19 December 2026 at 10:00.",
+    url: window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+      shareStatus.textContent = "Invitation shared.";
+    } else {
+      await navigator.clipboard.writeText(window.location.href);
+      shareStatus.textContent = "Invitation link copied.";
+    }
+  } catch (error) {
+    if (error.name !== "AbortError") shareStatus.textContent = "Please copy the link from your browser.";
+  }
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.14 });
+
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
