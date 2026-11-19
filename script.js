@@ -86,3 +86,43 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+const backgroundMusic = document.querySelector("#backgroundMusic");
+const musicToggle = document.querySelector("#musicToggle");
+const musicLabel = document.querySelector("#musicLabel");
+backgroundMusic.volume = 0.45;
+
+function updateMusicControl(isPlaying) {
+  musicToggle.setAttribute("aria-pressed", String(isPlaying));
+  musicToggle.setAttribute("aria-label", isPlaying ? "Pause background music" : "Play background music");
+  musicLabel.textContent = isPlaying ? "Thulisa umculo" : "Dlala umculo";
+}
+
+async function playBackgroundMusic() {
+  if (localStorage.getItem("iqudeMusic") === "paused") return;
+  try {
+    await backgroundMusic.play();
+    updateMusicControl(true);
+  } catch {
+    updateMusicControl(false);
+  }
+}
+
+musicToggle.addEventListener("click", async () => {
+  if (backgroundMusic.paused) {
+    localStorage.setItem("iqudeMusic", "playing");
+    await playBackgroundMusic();
+  } else {
+    backgroundMusic.pause();
+    localStorage.setItem("iqudeMusic", "paused");
+    updateMusicControl(false);
+  }
+});
+
+backgroundMusic.addEventListener("play", () => updateMusicControl(true));
+backgroundMusic.addEventListener("pause", () => updateMusicControl(false));
+
+playBackgroundMusic();
+document.addEventListener("pointerdown", (event) => {
+  if (!event.target.closest("#musicToggle")) playBackgroundMusic();
+}, { once: true });
