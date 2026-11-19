@@ -15,8 +15,21 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="music-gate-open">
   <a class="skip-link" href="#details">Skip to event details</a>
+
+  <div class="music-gate" id="musicGate" role="dialog" aria-modal="true" aria-labelledby="musicGateTitle">
+    <div class="music-gate-shade" aria-hidden="true"></div>
+    <div class="music-gate-content">
+      <span class="music-gate-mark" aria-hidden="true">iQude</span>
+      <p>Kwakwakwakwakwi!!!</p>
+      <h2 id="musicGateTitle">Kuhlatjiwe<br>Ngakwethu!!!</h2>
+      <button class="music-gate-button" id="enterInvitation" type="button">
+        <strong>VULA ISIMEMO</strong>
+        <span>(Open invitation)</span>
+      </button>
+    </div>
+  </div>
 
   <header class="hero" id="top">
     <nav class="nav shell" aria-label="Primary navigation">
@@ -34,17 +47,15 @@
     <div class="hero-art" aria-hidden="true"></div>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="hero-content shell">
-      <p class="eyebrow">Kuhlatjiwe Ngakwethu</p>
+      <p class="eyebrow">Kwakwakwakwakwi!!!</p>
       <h1><span>Kuhlatjiwe</span> Ngakwethu!!!</h1>
-      <p class="ceremony">kwaMashiyane</p>
+      <p class="ceremony">KwaMashiyane</p>
       <p class="intro">Lotjhani, siyanimema bonyana nizokugidinga nathi umnyanya weQude, kwaMashiyane</p>
       <div class="hero-actions">
         <a class="button button-primary" href="https://wa.me/27762305956?text=Hi%2C%20I%20would%20like%20to%20RSVP%20for%20iQude%20ceremony%20on%2019%20December%202026." target="_blank" rel="noopener">
           <span>RSVP on WhatsApp</span><span aria-hidden="true">↗</span>
         </a>
-        <button class="button button-ghost" id="calendarButton" type="button">
-          <span>Add to calendar</span><span aria-hidden="true">＋</span>
-        </button>
+      
       </div>
     </div>
 
@@ -132,6 +143,7 @@
         <p>Thumela ipendulo yakho ku <strong>076 230 5956</strong>.</p>
         <div class="rsvp-actions">
           <a class="button button-light" href="https://wa.me/27762305956?text=Hi%2C%20I%20would%20like%20to%20RSVP%20for%20iQude%20ceremony%20on%2019%20December%202026." target="_blank" rel="noopener">Phendula nge-WhatsApp <span aria-hidden="true">↗</span></a>
+         
         </div>
         <p class="share-status" id="shareStatus" role="status"></p>
       </div>
@@ -146,7 +158,7 @@
     </div>
   </footer>
 
-  <audio id="backgroundMusic" loop preload="metadata" playsinline>
+  <audio id="backgroundMusic" autoplay loop preload="auto" playsinline>
     <source src="assets/imodere-masimini.mp3" type="audio/mpeg">
   </audio>
   <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Play background music">

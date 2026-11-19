@@ -90,7 +90,17 @@ document.querySelectorAll(".reveal").forEach((element) => observer.observe(eleme
 const backgroundMusic = document.querySelector("#backgroundMusic");
 const musicToggle = document.querySelector("#musicToggle");
 const musicLabel = document.querySelector("#musicLabel");
+const musicGate = document.querySelector("#musicGate");
+const enterInvitation = document.querySelector("#enterInvitation");
 backgroundMusic.volume = 0.45;
+let musicWasPausedByVisitor = false;
+
+function revealInvitation() {
+  if (musicGate.hidden || musicGate.classList.contains("is-opening")) return;
+  musicGate.classList.add("is-opening");
+  document.body.classList.remove("music-gate-open");
+  window.setTimeout(() => { musicGate.hidden = true; }, 600);
+}
 
 function updateMusicControl(isPlaying) {
   musicToggle.setAttribute("aria-pressed", String(isPlaying));
@@ -99,10 +109,11 @@ function updateMusicControl(isPlaying) {
 }
 
 async function playBackgroundMusic() {
-  if (localStorage.getItem("iqudeMusic") === "paused") return;
+  if (musicWasPausedByVisitor) return;
   try {
     await backgroundMusic.play();
     updateMusicControl(true);
+    revealInvitation();
   } catch {
     updateMusicControl(false);
   }
@@ -110,13 +121,19 @@ async function playBackgroundMusic() {
 
 musicToggle.addEventListener("click", async () => {
   if (backgroundMusic.paused) {
-    localStorage.setItem("iqudeMusic", "playing");
+    musicWasPausedByVisitor = false;
     await playBackgroundMusic();
   } else {
     backgroundMusic.pause();
-    localStorage.setItem("iqudeMusic", "paused");
+    musicWasPausedByVisitor = true;
     updateMusicControl(false);
   }
+});
+
+enterInvitation.addEventListener("click", async () => {
+  musicWasPausedByVisitor = false;
+  await playBackgroundMusic();
+  revealInvitation();
 });
 
 backgroundMusic.addEventListener("play", () => updateMusicControl(true));
@@ -126,3 +143,7 @@ playBackgroundMusic();
 document.addEventListener("pointerdown", (event) => {
   if (!event.target.closest("#musicToggle")) playBackgroundMusic();
 }, { once: true });
+window.addEventListener("pageshow", playBackgroundMusic);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") playBackgroundMusic();
+});
